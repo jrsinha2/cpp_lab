@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<math.h>
+#include<unistd.h>
 #include<pthread.h>	
 void* func(void *arg)
 {	double *arr;
@@ -22,7 +23,7 @@ int main()
 	pthread_join(t,&ar);
 	arr=(double*)ar;
 	for(i=0;i<100;i++)
-		printf("%lf\n",arr[i]);
+		printf("%d %lf\n",i,arr[i]);
 	printf("\n");
 	return 0;
 }
